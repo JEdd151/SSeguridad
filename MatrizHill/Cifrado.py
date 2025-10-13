@@ -1,4 +1,8 @@
+from Matriz import Matriz
+
 class Cifrado:
-    def __init__(self, matriz, key):
-        self.matriz = matriz
-        self. key = key
+    def __init__(self, textoClaro)
+        self.textoClaro = textoClaro
+
+
+    def cifrado(self, matriz)
