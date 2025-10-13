@@ -5,15 +5,27 @@ from Key import Key
 
 def menu():
     print("Cifrado: Matriz de Hill")
-    textoClaro = input("Ingresa el mensaje a cifrar: ")
-    print("Mensaje a cifrar: ", textoClaro.upper())
+    text = input("Ingresa el mensaje a cifrar: ")
+    textoClaro = text.upper()
+    print("Mensaje a cifrar: ", textoClaro)
     cifrado = Cifrado(textoClaro)
-
+    numeros = []
     for c in textoClaro:
+        if c == " ":
+            numeros.append(26)
+        else:
+            numeros.append(ord(c) - ord('A'))
 
+    print("Valores numéricos:", numeros)
 
+    print(len(numeros))
+    
+    n = 4
 
+    while len(numeros) % n != 0:
+        numeros.append(26)
 
+    print(len(numeros))
 
 if __name__ == "__main__":
     menu()
