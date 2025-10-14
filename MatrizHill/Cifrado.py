@@ -1,9 +1,6 @@
-
-
 class Cifrado:
     def __init__(self):
         pass
-
 
     def conversion(self, textoClaro, n):
         numeros = []
