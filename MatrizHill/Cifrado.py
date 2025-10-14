@@ -10,7 +10,7 @@ class Cifrado:
             else:
                 numeros.append(ord(c) - ord('A'))
 
-        print("Valores numéricos:", numeros)
+        print("Valores numericos:", numeros)
         print(f"Longitud original: {len(numeros)}")
         
         if len(numeros) % n != 0:
@@ -18,8 +18,8 @@ class Cifrado:
             numeros.extend([26] * padding_needed)
             print(f"Se añadieron {padding_needed} caracteres de padding (26)")
         
-        print(f"Longitud después del padding: {len(numeros)}")
-        print("Valores numéricos con padding:", numeros)
+        print(f"Longitud despues del padding: {len(numeros)}")
+        print("Valores numericos con padding:", numeros)
 
         return numeros
 

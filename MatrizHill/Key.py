@@ -15,7 +15,7 @@ class Key:
                         fila.append(elemento)
                         break
                     except ValueError:
-                        print("Ingresa un número válido")
+                        print("Ingresa un numero valido")
             matriz.append(fila)
         return matriz
     

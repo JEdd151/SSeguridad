@@ -10,7 +10,6 @@ def menu():
     textoClaro = text.upper()
     numeros = []
     bloques = []
-    key_ = []
 
 
     while True:
@@ -21,7 +20,7 @@ def menu():
             else:
                 print("El tamaño debe ser ≥ 2")
         except ValueError:
-            print("Ingresa un número válido")
+            print("Ingresa un numero valido")
     
     print(f"Mensaje a cifrar: {textoClaro}")
     print(f"Usando bloques de tamaño: {n}")
