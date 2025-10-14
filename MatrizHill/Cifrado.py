@@ -18,8 +18,8 @@ class Cifrado:
         
         if len(numeros) % n != 0:
             padding_needed = n - (len(numeros) % n)
-            numeros.extend([27] * padding_needed)
-            print(f"Se añadieron {padding_needed} caracteres de padding (27)")
+            numeros.extend([26] * padding_needed)
+            print(f"Se añadieron {padding_needed} caracteres de padding (26)")
         
         print(f"Longitud después del padding: {len(numeros)}")
         print("Valores numéricos con padding:", numeros)
@@ -31,3 +31,32 @@ class Cifrado:
             bloque = numeros[i:i+n]
             bloques.append(bloque)
         return bloques
+
+    def cifrar_bloques(self, bloques, matriz_clave):
+        bloques_cifrados = []
+        
+        for bloque in bloques:
+            bloque_cifrado = self.multiplicar_matriz_vector(matriz_clave, bloque)
+            bloques_cifrados.append(bloque_cifrado)
+        
+        return bloques_cifrados
+    
+    def multiplicar_matriz_vector(self, matriz, vector):
+        resultado = []
+        for i in range(len(matriz)):
+            suma = 0
+            for j in range(len(vector)):
+                suma += matriz[i][j] * vector[j]
+            resultado.append(suma % 27)
+        return resultado
+
+
+    def conversion_inversa(self, bloques):
+        texto = ""
+        for bloque in bloques:
+            for num in bloque:
+                if num == 26:
+                    texto += " "
+                elif 0 <= num <= 25:
+                    texto += chr(num + ord('A'))
+        return texto

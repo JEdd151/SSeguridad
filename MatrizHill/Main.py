@@ -10,6 +10,7 @@ def menu():
     textoClaro = text.upper()
     numeros = []
     bloques = []
+    key_ = []
 
 
     while True:
@@ -32,6 +33,20 @@ def menu():
     print(f"\n{len(bloques)} bloques de tamaño {n}:")
     for i, bloque in enumerate(bloques):
         print(f"Bloque {i+1}: {bloque}")
+    
+    key = Key(n)
+    key.mostrar_matriz()
+
+    bloques_cifrados = cifrado.cifrar_bloques(bloques, key.matriz)
+    
+    print(f"\nBloques cifrados:")
+    for i, bloque in enumerate(bloques_cifrados):
+        print(f"Bloque {i+1}: {bloque}")
+
+    texto_cifrado = cifrado.conversion_inversa(bloques_cifrados)
+    print(f"\nTexto cifrado: {texto_cifrado}")
+
+
 
 
 if __name__ == "__main__":
