@@ -20,10 +20,16 @@ def menu():
 
     print(len(numeros))
     
-    n = 4
+    n = 1
 
-    while len(numeros) % n != 0:
-        numeros.append(26)
+    while len(numeros)%n != 0:
+        print(n)
+        if len(numeros)%n != 0:
+            if n*n < len(numeros):
+                n += 1
+            elif n*n > len(numeros):
+                while len(numeros) % n != 0:
+                    numeros.append(26)
 
     print(len(numeros))
 
