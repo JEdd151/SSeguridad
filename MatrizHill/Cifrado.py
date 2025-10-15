@@ -5,7 +5,7 @@ class Cifrado:
     def conversion(self, textoClaro, n):
         numeros = []
         for c in textoClaro:
-            if c == " ":
+            if c == " ": 
                 numeros.append(26)
             else:
                 numeros.append(ord(c) - ord('A'))
