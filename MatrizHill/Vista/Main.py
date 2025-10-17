@@ -1,9 +1,9 @@
-from Cifrado import Cifrado
-from Descifrado import Descifrado
-from Key import Key
+from Modelo.Cifrado import Cifrado
+from Modelo.DescifradoH import DescifradoH
+from Modelo.Key import Key
 
 cifrado = Cifrado()
-Descifrado = Descifrado()
+descifrado = DescifradoH()
 
 def menu():
     print("Cifrado: Matriz de Hill")
@@ -48,17 +48,12 @@ def menu():
     print(f"\nTexto cifrado: {texto_cifrado}")
 
 
-##PROCESO
-    print(f"Texto Cifrado: {cifrado.conversion(texto_cifrado, n)}")
-
-    bloques_descifrados = Descifrado.descifrar_bloques(bloques_cifrados, key.matriz)
-    print(f"\nBloques descifrados:")
-    for i, bloque in enumerate(bloques_descifrados):
-        print(f"Bloque {i+1}: {bloque}")
-
-    texto_descifrado = Descifrado.conversion_inversa(bloques_descifrados)
-    texto_descifrado = Descifrado.eliminar_padding(texto_descifrado)
-    print(f"\nTexto descifrado: {texto_descifrado}")
+##PROCESO DE DESCIFRADO
+    print(f"\nDESCIFRADO")
+    print(f"Texto Cifrado: {texto_cifrado}")
+    
+    texto_descifrado = descifrado.descifrar_mensaje(texto_cifrado, key.matriz)
+    print(f"Texto descifrado: {texto_descifrado}")
 
 if __name__ == "__main__":
     menu()
